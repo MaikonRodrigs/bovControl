@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 
+interface TitleProps {
+  color: string
+}
+
 export const Container = styled.div`
-  height: 130px;
-  /* padding: 50px; */
+  height: auto;
+  width: auto;
+`
+export const Title = styled.h1<TitleProps>`
+  color: var(--${({ color }) => color});
 `

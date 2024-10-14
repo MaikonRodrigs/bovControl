@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import StyledJsxRegistry from '@/lib/register'
 import localFont from 'next/font/local'
-import './globals.css'
+import 'leaflet/dist/leaflet.css'
 
+import './globals.css'
+import Head from 'next/head'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -26,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='pt-br'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <StyledJsxRegistry>{children}</StyledJsxRegistry>
       </body>

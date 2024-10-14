@@ -1,12 +1,18 @@
 'use client'
-import Title from '@/components/base/title'
-import Text from '@/components/base/text'
+
 import React from 'react'
-import getChecklist from '@/model/getChecklist.model'
+
+import useCheckListStore from '@/zustand/checklist.store'
+import DashboardView from '@/components/dashboard'
+import useLoadingStore from '@/zustand/loadind.store'
+import useMapStore from '@/zustand/map.store'
 
 const Dashboard: React.FC = () => {
-  const [list, setList] = React.useState<getChecklist[]>([])
+  const { stage, setCheckList } = useCheckListStore()
+  const { setLoadingPage } = useLoadingStore()
+
   async function getUser() {
+    setLoadingPage(true)
     try {
       const response = await fetch('/api/getCheckList', {
         method: 'GET',
@@ -15,9 +21,11 @@ const Dashboard: React.FC = () => {
         },
       })
       const data = await response.json()
-      setList(data)
+      setCheckList(data)
     } catch (error) {
       console.error('Error fetching datasss:', error)
+    } finally {
+      setLoadingPage(false)
     }
   }
 
@@ -25,14 +33,14 @@ const Dashboard: React.FC = () => {
     getUser()
   }, [])
 
-  return (
-    <>
-      <Title>TESTE</Title>
-      {list.slice(0, 20).map((i) => {
-        return <Text key={i._id}>{i._id}</Text>
-      })}
-    </>
-  )
+  const DashboardStages = React.useMemo(() => {
+    switch (stage) {
+      case 'list':
+        return <DashboardView />
+    }
+  }, [stage])
+
+  return DashboardStages
 }
 
 export default Dashboard

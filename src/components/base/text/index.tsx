@@ -12,10 +12,10 @@ interface TextProps {
 const Text: React.FC<TextProps> = ({
   children,
   color = 'primary',
-}: TextProps) => {
+}: TextProps) => { 
   return (
     <S.Container>
-      <S.Text color={color}>{children}</S.Text>
+      <S.Label color={color}>{children}</S.Label>
     </S.Container>
   )
 }

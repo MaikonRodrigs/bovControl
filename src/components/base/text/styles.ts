@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-interface TextProps {
+interface LabelProps {
   color: string
 }
 
@@ -8,6 +8,6 @@ export const Container = styled.div`
   height: auto;
   width: auto;
 `
-export const Text = styled.h2<TextProps>`
-  color: var(--${({ color }) => color});
+export const Label = styled.span<LabelProps>`
+  color: var(--${({ color }) => color}); 
 `

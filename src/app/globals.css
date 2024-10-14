@@ -4,6 +4,7 @@
   --primary: #003a3d;
   --secondary: #007386;
   --third: #3cadf3;
+  --shadow: 14px 22px 49px -18px rgba(0, 0, 0, 0.75);
 }
 
 html,

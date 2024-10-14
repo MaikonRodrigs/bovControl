@@ -46,7 +46,7 @@ export const WrapperText = styled.div`
 
 export const MapWrapper = styled.div`
   width: 100%;
-  height: 57%;
+  height: 48%;
   position: absolute;
   bottom: 0;
   right: 0;

@@ -1,32 +1,22 @@
 import React from 'react'
-
 import * as S from './styles'
-import Text from '@/components/base/text'
-import useMapStore from '@/zustand/map.store'
-import Input from '@/components/base/input'
-import Description from '@/components/base/description'
-import { Button, useToast } from '@chakra-ui/react'
-import Select from '@/components/base/select'
-import { CloseCircleOutline } from 'styled-icons/evaicons-outline'
-import { useFormik } from 'formik'
 
-import { Switch } from '@chakra-ui/react'
+import Input from '@/components/base/input'
+import Select from '@/components/base/select'
+import useMapStore from '@/zustand/map.store'
 import useLoadingStore from '@/zustand/loadind.store'
 import useCheckListStore from '@/zustand/checklist.store'
-import { GenerateUUID } from '@/components/utils/generateUUID'
-import { formatISO } from 'date-fns'
 import ValidadeFarmerForm from '@/schema/ValidadeFarmerFormSchema'
 
+import { Switch } from '@chakra-ui/react'
+import { useFormik } from 'formik'
+import { formatISO } from 'date-fns'
+import { GenerateUUID } from '@/components/utils/generateUUID'
+import { CloseCircleOutline } from 'styled-icons/evaicons-outline'
+import { Button, Text, useToast } from '@chakra-ui/react'
+
 const AddFarmer: React.FC = () => {
-  const {
-    marker,
-    setMarker,
-    currentFarmer,
-    setDisabled,
-    disabled,
-    setAdd,
-    clearMarker,
-  } = useMapStore()
+  const { marker, setDisabled, setAdd, clearMarker } = useMapStore()
   const toast = useToast()
 
   const { setLoadingPage } = useLoadingStore()
@@ -48,7 +38,7 @@ const AddFarmer: React.FC = () => {
       type: selectedOption,
     },
     validationSchema: ValidadeFarmerForm,
-    onSubmit: async (values, { setSubmitting, setErrors }) => {
+    onSubmit: async (values, { setSubmitting }) => {
       setLoadingPage(true)
       console.log(formik.errors)
 
@@ -108,6 +98,14 @@ const AddFarmer: React.FC = () => {
         }
       } catch (error) {
         console.error('Error fetching datasss:', error)
+        toast({
+          title: `${formik.values.farmerName}`,
+          description: 'Erro ao cadastrar',
+          status: 'error',
+          duration: 9000,
+          isClosable: false,
+          position: 'top',
+        })
       } finally {
         setLoadingPage(false)
         setSubmitting(false)
@@ -155,7 +153,7 @@ const AddFarmer: React.FC = () => {
     <S.Container>
       <S.WrapperTitle>
         <S.WrapperText>
-          <Description>
+          <Text fontSize={12}>
             Supervisão recente?{' '}
             <Switch
               id='isRequired'
@@ -164,7 +162,7 @@ const AddFarmer: React.FC = () => {
               onChange={handleChange}
               isRequired
             />
-          </Description>
+          </Text>
         </S.WrapperText>
 
         <CloseCircleOutline
@@ -180,7 +178,7 @@ const AddFarmer: React.FC = () => {
       <S.Form>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Fazendeiro</Description>
+            <Text fontSize={12}>Fazendeiro</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -200,7 +198,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Nome da Fazenda</Description>
+            <Text fontSize={12}>Nome da Fazenda</Text>
           </S.WrapperText>
 
           <Input
@@ -221,7 +219,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Cidade da Fazenda</Description>
+            <Text fontSize={12}>Cidade da Fazenda</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -241,7 +239,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Nome do supervisor</Description>
+            <Text fontSize={12}>Nome do supervisor</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -261,7 +259,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Numeros de vaca</Description>
+            <Text fontSize={12}>Numeros de vaca</Text>
           </S.WrapperText>
           <Input
             type='number'
@@ -281,7 +279,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Quantidade de leite produzido</Description>
+            <Text fontSize={12}>Quantidade de leite produzido</Text>
           </S.WrapperText>
           <Input
             type='number'
@@ -301,7 +299,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Latitude</Description>
+            <Text fontSize={12}>Latitude</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -316,7 +314,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Latitude</Description>
+            <Text fontSize={12}>Latitude</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -331,7 +329,7 @@ const AddFarmer: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Selecione</Description>
+            <Text fontSize={12}>Selecione</Text>
           </S.WrapperText>
           <Select
             options={options}
@@ -353,7 +351,7 @@ const AddFarmer: React.FC = () => {
           colorScheme='teal'
           onClick={() => setAdd(false)}
         >
-          <Text>Cancelar</Text>
+          <Text fontSize={16}>Cancelar</Text>
         </Button>
         <Button
           width={'full'}
@@ -362,7 +360,7 @@ const AddFarmer: React.FC = () => {
           colorScheme='teal'
           onClick={() => formik.handleSubmit()}
         >
-          <Text>Salvar</Text>
+          <Text fontSize={16}>Salvar</Text>
         </Button>
       </S.IconsWrapper>
     </S.Container>

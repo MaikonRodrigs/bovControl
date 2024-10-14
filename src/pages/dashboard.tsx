@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import useCheckListStore from '@/zustand/checklist.store'
 import DashboardView from '@/components/dashboard'
 import useLoadingStore from '@/zustand/loadind.store'
+import useCheckListStore from '@/zustand/checklist.store'
 
 const Dashboard: React.FC = () => {
   const { stage, setCheckList } = useCheckListStore()

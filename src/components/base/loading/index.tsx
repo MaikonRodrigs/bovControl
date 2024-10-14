@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-
 import * as S from './styles'
+
 import useLoadingStore from '@/zustand/loadind.store'
 
 export function Loading() {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import * as S from './styles'
-import Description from '@/components/base/description'
+import { Text } from '@chakra-ui/react'
 
 interface PaginationProps {
   onClickPrev: () => void
@@ -31,9 +31,9 @@ const Pagination: React.FC<PaginationProps> = ({
       <S.Container>
         <S.Prev size={32} color={`var(--primary)`} onClick={onClickPrev} />
         <S.Pagination>
-          <Description size='think'>
+          <Text fontSize={12}>
             {page}/{totalPages}
-          </Description>
+          </Text>
         </S.Pagination>
         <S.Next size={32} color={`var(--primary)`} onClick={onClickNext} />
       </S.Container>

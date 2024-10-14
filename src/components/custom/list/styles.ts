@@ -25,6 +25,7 @@ export const ContainerInfos = styled.div`
   justify-content: space-evenly;
   padding-bottom: 1rem;
   height: auto;
+  width: 100%;
 `
 export const Content = styled.div`
   padding: 5px;

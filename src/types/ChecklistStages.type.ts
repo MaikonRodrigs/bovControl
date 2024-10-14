@@ -1,1 +1,1 @@
-export type ChecklistStageTypes = 'list' | 'view'
+export type ChecklistStageTypes = 'list'

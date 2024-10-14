@@ -1,24 +1,23 @@
 import React from 'react'
+
 import Card from '@/components/custom/card'
 import List from '@/components/custom/list'
-import useCheckListStore from '@/zustand/checklist.store'
-
+import Modal from '../base/modal'
+import Insert from '../custom/insert'
+import Pagination from '../custom/pagination'
 import useMapStore from '@/zustand/map.store'
 import ViewFarmerInfo from '../custom/view'
-import { LatLngTuple } from 'leaflet'
-import Pagination from '../custom/pagination'
-
-import { useToast } from '@chakra-ui/react'
-import Modal from '../base/modal'
 import useLoadingStore from '@/zustand/loadind.store'
-import Insert from '../custom/insert'
-import Title from '../base/title'
+import useCheckListStore from '@/zustand/checklist.store'
 
+import { Text } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react'
+import { LatLngTuple } from 'leaflet'
 
 const DashboardView: React.FC = () => {
-  const [modal, setModal] = React.useState<boolean>(false)
-  const [offset, setOffset] = React.useState<number>(0)
   const [page, setPage] = React.useState<number>(1)
+  const [offset, setOffset] = React.useState<number>(0)
+  const [modal, setModal] = React.useState<boolean>(false)
 
   const { checkList, setCheckList } = useCheckListStore()
   const { setLoadingPage, loadingPage } = useLoadingStore()
@@ -108,11 +107,11 @@ const DashboardView: React.FC = () => {
     }
   }
   const orderedCheckList = checkList
-    ?.slice() // Cria uma cópia do array para não modificar o original
+    ?.slice()
     .sort(
       (a, b) =>
         new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-    ) // Ordena pela data mais recente
+    )
 
   return (
     <>
@@ -120,7 +119,7 @@ const DashboardView: React.FC = () => {
         <div
           style={{ textAlign: 'center', width: '100%', marginBottom: '20px' }}
         >
-          <Title>Lista de Fazendeiros @BovControl</Title>
+          <Text fontSize={32}>Lista de Fazendeiros @BovControl</Text>
         </div>
         <hr />
         {!loadingPage && <Insert />}

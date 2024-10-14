@@ -1,5 +1,4 @@
 import React from 'react'
-
 import * as S from './styles'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {

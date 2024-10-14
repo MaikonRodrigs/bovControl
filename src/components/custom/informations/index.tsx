@@ -1,20 +1,19 @@
 import React from 'react'
-
 import * as S from './styles'
-import Text from '@/components/base/text'
-import useMapStore from '@/zustand/map.store'
-import Input from '@/components/base/input'
-import Description from '@/components/base/description'
-import { Button, useToast } from '@chakra-ui/react'
-import Select from '@/components/base/select'
-import { LatLngTuple } from 'leaflet'
-import { CloseCircleOutline } from 'styled-icons/evaicons-outline'
-import { useFormik } from 'formik'
 
-import { Switch } from '@chakra-ui/react'
+import Input from '@/components/base/input'
+import Select from '@/components/base/select'
+import useMapStore from '@/zustand/map.store'
 import useLoadingStore from '@/zustand/loadind.store'
 import useCheckListStore from '@/zustand/checklist.store'
 import ValidadeFarmerForm from '@/schema/ValidadeFarmerFormSchema'
+
+import { Text } from '@chakra-ui/react'
+import { Switch } from '@chakra-ui/react'
+import { useFormik } from 'formik'
+import { LatLngTuple } from 'leaflet'
+import { Button, useToast } from '@chakra-ui/react'
+import { CloseCircleOutline } from 'styled-icons/evaicons-outline'
 
 const Informations: React.FC = () => {
   const {
@@ -100,7 +99,15 @@ const Informations: React.FC = () => {
           })
         }
       } catch (error) {
-        console.error('Error fetching datasss:', error)
+        console.error('Error fetching data:', error)
+        toast({
+          title: `${formik.values.farmerName}`,
+          description: 'Erro ao atualizar as informaçoes',
+          status: 'error',
+          duration: 9000,
+          isClosable: false,
+          position: 'top',
+        })
       } finally {
         setLoadingPage(false)
         setSubmitting(false)
@@ -120,7 +127,7 @@ const Informations: React.FC = () => {
       const data = await response.json()
       setCheckList(data)
     } catch (error) {
-      console.error('Error fetching datasss:', error)
+      console.error('Error fetching data:', error)
     } finally {
       setLoadingPage(false)
     }
@@ -155,7 +162,7 @@ const Informations: React.FC = () => {
     <S.Container>
       <S.WrapperTitle>
         <S.WrapperText>
-          <Description>
+          <Text fontSize={14}>
             Supervisão recente?{' '}
             <Switch
               id='isRequired'
@@ -165,7 +172,7 @@ const Informations: React.FC = () => {
               onChange={handleChange}
               isRequired
             />
-          </Description>
+          </Text>
         </S.WrapperText>
 
         <CloseCircleOutline
@@ -182,7 +189,7 @@ const Informations: React.FC = () => {
       <S.Form>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Fazendeiro</Description>
+            <Text fontSize={12}>Fazendeiro</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -203,7 +210,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Nome da Fazenda</Description>
+            <Text fontSize={12}>Nome da Fazenda</Text>
           </S.WrapperText>
 
           <Input
@@ -225,7 +232,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Cidade da Fazenda</Description>
+            <Text fontSize={12}>Cidade da Fazenda</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -246,7 +253,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Nome do supervisor</Description>
+            <Text fontSize={12}>Nome do supervisor</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -267,7 +274,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Numeros de vaca</Description>
+            <Text fontSize={12}>Numeros de vaca</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -288,7 +295,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Quantidade de leite produzido</Description>
+            <Text fontSize={12}>Quantidade de leite produzido</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -309,7 +316,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Latitude</Description>
+            <Text fontSize={12}>Latitude</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -324,7 +331,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Latitude</Description>
+            <Text fontSize={12}>Latitude</Text>
           </S.WrapperText>
           <Input
             type='text'
@@ -339,7 +346,7 @@ const Informations: React.FC = () => {
         </S.WrapperForm>
         <S.WrapperForm>
           <S.WrapperText>
-            <Description>Selecione</Description>
+            <Text fontSize={12}>Selecione</Text>
           </S.WrapperText>
           <Select
             options={options}
@@ -361,7 +368,7 @@ const Informations: React.FC = () => {
             colorScheme='teal'
             onClick={() => setDisabled(!disabled)}
           >
-            <Text>EDITAR</Text>
+            <Text fontSize={16}>EDITAR</Text>
           </Button>
         </S.IconsWrapper>
       ) : (
@@ -373,7 +380,7 @@ const Informations: React.FC = () => {
             colorScheme='teal'
             onClick={() => onClickCancel()}
           >
-            <Text>Cancelar</Text>
+            <Text fontSize={16}>Cancelar</Text>
           </Button>
           <Button
             width={'full'}
@@ -382,7 +389,7 @@ const Informations: React.FC = () => {
             colorScheme='teal'
             onClick={() => formik.handleSubmit()}
           >
-            <Text>Salvar</Text>
+            <Text fontSize={16}>Salvar</Text>
           </Button>
         </S.IconsWrapper>
       )}

@@ -1,11 +1,9 @@
 import React from 'react'
-import Text from '@/components/base/text'
-
 import * as S from './styles'
+
+import { Text } from '@chakra-ui/react'
 import { PersonCircle } from 'styled-icons/bootstrap'
-import Description from '@/components/base/description'
 import { formatDate } from '@/components/utils/formatDate'
-import Label from '@/components/base/label'
 
 interface ListProps {
   name: string
@@ -29,21 +27,21 @@ const List: React.FC<ListProps> = ({
       <S.Content>
         <S.NameWrapper>
           <PersonCircle size={22} color={'black'} />
-          <Label>{name}</Label> <br />
+          <Text fontSize={20} fontWeight={600}>{name}</Text> <br />
         </S.NameWrapper>
         <S.ContainerInfos>
           <div>
-            <Description size={'think'}>Nome da Fazenda</Description>
-            <Text>{nameFarmer}</Text>
+            <Text fontSize={12} fontWeight={700}>Nome da Fazenda</Text>
+            <Text fontSize={14}>{nameFarmer}</Text>
           </div>
 
           <div>
-            <Description size={'think'}>Cidade da Fazenda</Description>
-            <Text>{cityFarmer}</Text>
+            <Text fontSize={12} fontWeight={700}>Cidade da Fazenda</Text>
+            <Text fontSize={14}>{cityFarmer}</Text>
           </div>
           <div>
-            <Description size={'think'}>Data de criação</Description>
-            <Description>{formatDate(creation)}</Description>
+            <Text fontSize={12} fontWeight={700}>Data de criação</Text>
+            <Text fontSize={14}>{formatDate(creation)}</Text>
           </div>
           <S.IconsContainer>
             <S.IconView

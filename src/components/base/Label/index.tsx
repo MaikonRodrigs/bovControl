@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+
 import * as S from './styles'
 
 interface LabelProps {

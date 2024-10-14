@@ -7,3 +7,4 @@ export const Container = styled.div`
 export const Label = styled.h2`
   color: var(--primary);
 `
+

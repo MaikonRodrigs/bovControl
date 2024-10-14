@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import * as S from '@/components/base/label/styles'
+import * as S from './styles'
 
 interface LabelProps {
   children: React.ReactNode

@@ -7,11 +7,12 @@ import useMapStore from '@/zustand/map.store'
 import ViewFarmerInfo from '../custom/view'
 import { LatLngTuple } from 'leaflet'
 import Pagination from '../custom/pagination'
-import Title from '../base/title'
+
 import { useToast } from '@chakra-ui/react'
 import Modal from '../base/modal'
 import useLoadingStore from '@/zustand/loadind.store'
 import Insert from '../custom/insert'
+import Title from '../base/Title'
 
 const DashboardView: React.FC = () => {
   const [modal, setModal] = React.useState<boolean>(false)

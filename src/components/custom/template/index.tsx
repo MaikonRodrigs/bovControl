@@ -13,4 +13,3 @@ const Template: React.FC<TemplateProps> = ({ children }: TemplateProps) => {
 }
 
 export default Template
- 

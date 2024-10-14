@@ -3,9 +3,9 @@ import Text from '@/components/base/text'
 
 import * as S from './styles'
 import { PersonCircle } from 'styled-icons/bootstrap'
-import Label from '@/components/base/label'
 import Description from '@/components/base/description'
 import { formatDate } from '@/components/utils/formatDate'
+import Label from '@/components/base/label'
 
 interface ListProps {
   name: string

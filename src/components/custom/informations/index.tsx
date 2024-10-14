@@ -186,7 +186,7 @@ const Informations: React.FC = () => {
           </S.WrapperText>
           <Input
             type='text'
-            placeholder='Nome'
+            placeholder='Insira o nome do Fazendeiro'
             disabled={disabled}
             id='name'
             name='name'
@@ -208,13 +208,19 @@ const Informations: React.FC = () => {
 
           <Input
             type='text'
-            placeholder='Nome'
+            placeholder='Insira o nome da Fazenda'
             value={formik.values.farmerName}
             disabled={disabled}
             id='farmerName'
             name='farmerName'
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            style={{
+              border:
+                formik.touched.farmerName && formik.errors.farmerName
+                  ? '1px solid red'
+                  : '1px solid #ccc',
+            }}
           />
         </S.WrapperForm>
         <S.WrapperForm>
@@ -223,13 +229,19 @@ const Informations: React.FC = () => {
           </S.WrapperText>
           <Input
             type='text'
-            placeholder='Nome da Fazenda'
+            placeholder='Insira a cidade da Fazenda'
             value={formik.values.farmerCity}
             disabled={disabled}
             id='farmerCity'
             name='farmerCity'
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            style={{
+              border:
+                formik.touched.farmerCity && formik.errors.farmerCity
+                  ? '1px solid red'
+                  : '1px solid #ccc',
+            }}
           />
         </S.WrapperForm>
         <S.WrapperForm>
@@ -238,13 +250,19 @@ const Informations: React.FC = () => {
           </S.WrapperText>
           <Input
             type='text'
-            placeholder='Nome'
+            placeholder='Insira o nome do supervisor'
             value={formik.values.nameSupervision}
             disabled={disabled}
             id='nameSupervision'
             name='nameSupervision'
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            style={{
+              border:
+                formik.touched.nameSupervision && formik.errors.nameSupervision
+                  ? '1px solid red'
+                  : '1px solid #ccc',
+            }}
           />
         </S.WrapperForm>
         <S.WrapperForm>
@@ -253,13 +271,19 @@ const Informations: React.FC = () => {
           </S.WrapperText>
           <Input
             type='text'
-            placeholder='Nome'
+            placeholder='Quantidade de Vacas'
             value={formik.values.numberOfCows}
             disabled={disabled}
             id='numberOfCows'
             name='numberOfCows'
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            style={{
+              border:
+                formik.touched.numberOfCows && formik.errors.numberOfCows
+                  ? '1px solid red'
+                  : '1px solid #ccc',
+            }}
           />
         </S.WrapperForm>
         <S.WrapperForm>
@@ -275,6 +299,12 @@ const Informations: React.FC = () => {
             name='amountOfMilk'
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            style={{
+              border:
+                formik.touched.amountOfMilk && formik.errors.amountOfMilk
+                  ? '1px solid red'
+                  : '1px solid #ccc',
+            }}
           />
         </S.WrapperForm>
         <S.WrapperForm>
@@ -298,7 +328,7 @@ const Informations: React.FC = () => {
           </S.WrapperText>
           <Input
             type='text'
-            placeholder='Nome'
+            placeholder='Longitude'
             value={marker?.[1]}
             disabled={disabled}
             id='longitude'

@@ -9,5 +9,5 @@ export const Container = styled.div`
   width: auto;
 `
 export const Label = styled.span<LabelProps>`
-  color: var(--${({ color }) => color}); 
+  color: var(--${({ color }) => color});
 `

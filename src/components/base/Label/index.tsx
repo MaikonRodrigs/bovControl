@@ -1,22 +1,18 @@
 'use client'
 
 import React from 'react'
-import * as S from './styles'
+import * as S from '@/components/base/label/styles'
 
 interface LabelProps {
   children: React.ReactNode
-  color?: 'primary' | 'secondary' | 'third'
 }
 
-const Title: React.FC<LabelProps> = ({
-  children,
-  color = 'primary',
-}: LabelProps) => {
+const Label: React.FC<LabelProps> = ({ children }: LabelProps) => {
   return (
     <S.Container>
-      <S.Label color={color}>{children}</S.Label>
+      <S.Label>{children}</S.Label>
     </S.Container>
   )
 }
 
-export default Title
+export default Label

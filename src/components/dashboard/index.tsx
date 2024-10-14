@@ -7,11 +7,13 @@ import useMapStore from '@/zustand/map.store'
 import ViewFarmerInfo from '../custom/view'
 import { LatLngTuple } from 'leaflet'
 import Pagination from '../custom/pagination'
-import Title from '../base/title'
+
 import { useToast } from '@chakra-ui/react'
 import Modal from '../base/modal'
 import useLoadingStore from '@/zustand/loadind.store'
 import Insert from '../custom/insert'
+import Title from '../base/title'
+
 
 const DashboardView: React.FC = () => {
   const [modal, setModal] = React.useState<boolean>(false)
@@ -38,19 +40,6 @@ const DashboardView: React.FC = () => {
     setPage((prevPage) => Math.max(prevPage - 1, 1))
     setOffset((prevOffset) => Math.max(prevOffset - 5, 0))
   }, [checkList, page])
-
-  // const onClickView = React.useMemo(() => {
-  //   return (idx: number) => {
-  //     console.log(idx)
-  //     const { latitude, longitude } = checkList[idx]?.location
-  //     const markerFarmer: LatLngTuple = [latitude, longitude]
-  //     setMarker(markerFarmer)
-  //     setCurrentFarmer(checkList[idx])
-  //     setView(true)
-  //     if (markerFarmer) {
-  //     }
-  //   }
-  // }, [checkList])
 
   const onClickView = React.useMemo(() => {
     return (item: (typeof checkList)[0]) => {

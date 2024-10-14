@@ -3,7 +3,6 @@ import React from 'react'
 import * as S from './styles'
 import Description from '@/components/base/description'
 
-
 interface PaginationProps {
   onClickPrev: () => void
   onClickNext: () => void

@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+👋 <br>Hi, I’m @MaikonRodrigs, hosted this project through Vercel integrated my Github, take a look: <br>
+@BovControl (https://bov-control.vercel.app/)
 
-## Getting Started
+This project [create-next-app https://nextjs.org/docs/getting-started/installation] `@React` <br>
+First run `yarn` next `yarn run dev `, and **enjoy** 💥 <br>
 
-First, run the development server:
+**REMEMBER:**
+
+## Tecnologias Utilizadas
+- [x] Next.js <br>
+Um framework React que oferece renderização híbrida (server-side rendering e static-site generation), otimização de desempenho e recursos para construção de aplicações escaláveis com roteamento dinâmico e API routes. https://nextjs.org
+- [x] Chakra UI<br>
+Uma biblioteca de componentes de interface do usuário (UI) para React que fornece uma coleção de componentes acessíveis e customizáveis, com foco em facilidade de uso e estilo moderno. https://chakra-ui.com
+- [x] Leaflet <br>
+Uma biblioteca JavaScript de código aberto para mapas interativos. Muito usada para visualização de mapas e geolocalização em aplicações web, oferecendo funcionalidades leves e flexíveis. https://leafletjs.com
+- [x] date-fns <br>
+Uma biblioteca para manipulação de datas em JavaScript, fornecendo funções puras e modulares. É leve, rápida e possui uma ampla gama de utilitários para trabalhar com datas de forma eficiente. https://date-fns.org
+- [x] Formik <br>
+Uma biblioteca para a construção e gerenciamento de formulários no React. Ela facilita a manipulação de estados de formulários, validação e submissão, especialmente em formulários complexos. https://formik.org
+- [x] Yup <br>
+Uma biblioteca de validação de esquemas para JavaScript. É usada frequentemente com Formik para validação de formulários, permitindo a criação de regras de validação robustas e configuráveis. https://github.com/jquense/yup
+- [x] Framer Motion <br>
+Uma biblioteca para animações em React que permite criar animações fluidas e interativas com facilidade. Oferece controle granular e recursos avançados para animações baseadas em gestos e interações. https://www.framer.com/motion
+- [x] Styled-components <br>
+Uma biblioteca para estilizar componentes no React usando tagged template literals. Permite escrever CSS diretamente no código JavaScript, com escopo local, promovendo estilos dinâmicos e reutilizáveis. https://styled-components.com
+- [x] Styled-icons <br>
+Uma biblioteca que oferece uma coleção de ícones SVG estilizados para React, integrando-os facilmente com styled-components ou diretamente em seus projetos. https://styled-icons.github.io/styled-icons
+- [x] Zustand <br>
+Uma pequena biblioteca de gerenciamento de estado para React. É simples, sem dependências extras, e permite gerenciar o estado global da aplicação de forma eficiente, com foco em performance e facilidade de uso. https://github.com/pmndrs/zustand
+
+### Hooks
+- [x] useState <br>
+- [x] useEffect <br>
+- [x] useRef <br>
+- [x] uesMemo <br>
+- [x] uesCallback <br>
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Design Pattern, App, Models, Schema, Validations, Types, Midleware, Handler and others
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy on Vercel 🚀
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -18,7 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({
 }: PaginationProps) => {
   const calculateTotalPages = (
     totalItems: number,
-    itemsPerPage: number = 5,
+    itemsPerPage: number = 4,
   ): number => {
     return Math.ceil(totalItems / itemsPerPage)
   }

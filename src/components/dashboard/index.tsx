@@ -26,18 +26,18 @@ const DashboardView: React.FC = () => {
     useMapStore()
 
   const NextPage = React.useCallback(() => {
-    const totalPages = Math.ceil(checkList.length / 5)
+    const totalPages = Math.ceil(checkList.length / 4)
     if (page >= totalPages) return
 
     setPage((prevPage) => prevPage + 1)
-    setOffset((prevOffset) => prevOffset + 5)
+    setOffset((prevOffset) => prevOffset + 4)
   }, [checkList, page])
 
   const PrevPage = React.useCallback(() => {
     if (offset <= 0) return
 
     setPage((prevPage) => Math.max(prevPage - 1, 1))
-    setOffset((prevOffset) => Math.max(prevOffset - 5, 0))
+    setOffset((prevOffset) => Math.max(prevOffset - 4, 0))
   }, [checkList, page])
 
   const onClickView = React.useMemo(() => {
@@ -125,7 +125,7 @@ const DashboardView: React.FC = () => {
         {!loadingPage && <Insert />}
         {checkList &&
           orderedCheckList
-            ?.slice(offset, offset + 5)
+            ?.slice(offset, offset + 4)
             .map((items, idx: number) => (
               <List
                 key={items._id}

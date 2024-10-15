@@ -25,7 +25,8 @@ export const Wrapper = styled.div`
   background-color: #eeee;
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
-  width: 40%;
+  width: 52%;
+  margin-right: 0px;
   bottom: 0;
   top: 0;
   right: 0;
@@ -46,7 +47,7 @@ export const WrapperText = styled.div`
 
 export const MapWrapper = styled.div`
   width: 100%;
-  height: 48%;
+  height: 53%;
   position: absolute;
   bottom: 0;
   right: 0;

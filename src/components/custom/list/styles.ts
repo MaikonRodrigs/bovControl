@@ -12,7 +12,7 @@ export const NameWrapper = styled.div`
   align-items: center;
   flex-direction: row;
   gap: 10px;
-  margin-top: 16px;
+  margin-top: 8px;
   margin-bottom: 8px;
 `
 
@@ -28,7 +28,7 @@ export const ContainerInfos = styled.div`
   width: 100%;
 `
 export const Content = styled.div`
-  padding: 5px;
+  padding: 2px;
   display: flex;
   flex-direction: column;
   gap: 6px;

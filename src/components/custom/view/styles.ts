@@ -11,7 +11,8 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   box-shadow: var(--shadow);
   background-color: #f3f3f3;
-  width: 40%;
+  width: 52%;
+  margin-right: 0px;
   bottom: 0;
   top: 0;
   right: 0;
@@ -20,7 +21,7 @@ export const Wrapper = styled.div`
 
 export const MapWrapper = styled.div`
   width: 100%;
-  height: 48%;
+  height: 53%;
   position: absolute;
   bottom: 0;
   right: 0;
